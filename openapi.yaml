@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: API senzilla
+  description: Una API senzilla per provar les operacions GET i POST.
+  version: "1.0"
+paths:
+  /data:
+    get:
+      summary: Obté les dades
+      operationId: getData
+      responses:
+        '200':
+          description: Dades obtingudes correctament
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+    post:
+      summary: Afegeix dades
+      operationId: postData
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+      responses:
+        '200':
+          description: Dada afegida correctament
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
